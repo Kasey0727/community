@@ -92,12 +92,14 @@
                     <div class="flex flex-row" style="justify-content: space-between">
                         <!-- Tags -->
                         <div class="flex flex-row items-center">
-                            <span v-for="(item, index) in article.Tags.split(';')"
+                            <span v-if="article.Tags" v-for="(item, index) in article.Tags.split(';')"
                                 style="background-color: #cee1f5;"
                                 class="mr-3 inline-flex items-center font-medium px-2.5 py-0.5 rounded-full">
                                 <span class="w-2 h-2 me-1 rounded-full mr-1" style="background-color: #3182ce;"></span>
                                 <a :href="'/search?value=' + item">${ item }</a>
                             </span>
+
+                            <span v-else></span>
                         </div>
 
                         <!-- Translate Button -->
@@ -134,17 +136,17 @@
                             </a>
                             <div class="flex items-center">
                                 <!-- Update Time -->
-                                <p class="text-sm" style="color: #a0aec0; margin-left: 10px;">
-                                    <time pubdate>
-                                        Updated this article on ${ article.Mtime.slice(0,10) }
+                                <p class="text-sm flex items-center" style="margin-left: 10px;">
+                                    <time pubdate style="color: #a0aec0;">
+                                        Updated this article on 
                                     </time>
+                                    <p class="ml-1 text-sm" style="color: #525252;">${ article.Mtime.slice(0,10) }</p>
                                 </p>
 
                                 <!-- Views -->
-                                <div class="inline-flex items-center text-sm" style="margin-left: 30px;">
+                                <div class="inline-flex items-center text-sm" style="margin-left: 35px;">
                                     <i class="ph-duotone ph-eye" style="font-size: 18px; color: #a0aec0;"></i>
-                                    <!-- TODO: @Bai <p>${ article.Views }</p> -->
-                                    <p class="ml-1 text-sm" style="color: #a0aec0;">123</p>
+                                    <p class="ml-1 text-sm" style="color: #525252;">${ article.ViewCount }</p>
                                 </div>
                             </div>
                         </div>

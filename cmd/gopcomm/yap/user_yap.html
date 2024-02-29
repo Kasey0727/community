@@ -196,14 +196,12 @@
                                             <!-- Views -->
                                             <div class="flex justify-center items-center" style="width: 40%;">
                                                 <i class="ph-duotone ph-eye" style="color: #3182ce;"></i>
-                                                <!-- TODO: 浏览量 -->
                                                 <span class="ml-1 text-sm">${ item.ViewCount }</span>
                                             </div>
 
                                             <!-- Likes -->
                                             <div class="flex justify-center items-center" style="width: 40%;">
                                                 <i class="ph-duotone ph-thumbs-up" style="color: #3182ce;"></i>
-                                                <!-- TODO: 点赞数 -->
                                                 <span class="ml-1 text-sm">${ item.LikeCount }</span>
                                             </div>
                                         </div>
@@ -224,7 +222,7 @@
                                         <div class="flex flex-row items-center" v-if="item.Tags">
                                             <span v-for="(tag, index) in item.Tags.split(';')" class="flex flex-row items-center">
                                                 <i class="ph-duotone ph-hash" style="color: #3182ce; font-size: 17px;"></i>
-                                                <p class="text-sm ml-1 mr-2 hover:text-blue-600">
+                                                <p class="text-sm ml-1 mr-2">
                                                     <a :href="'/search?value=' + tag">
                                                         ${ tag }
                                                     </a>
